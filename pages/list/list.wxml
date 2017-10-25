@@ -1,0 +1,107 @@
+<!--index.wxml-->
+<view class="container">
+  <!--轮播图begin-->
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+      <block>    
+        <swiper-item>    
+          <image src="http://47.92.66.126/tomato/{{img1}}" class="slide-image" mode="widthFix"/>    
+        </swiper-item>    
+      </block>    
+  </swiper>
+  <!--轮播图end-->
+  <!--导航栏begin-->
+  
+  <!--导航栏end-->
+  <!--主体begin-->
+  <view class="body">
+    <view class='body_gd'>
+      <view style='font-size:40rpx;font-weight:bold;'>{{name}}</view>
+    </view>
+    <view class="item">
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>小情歌伴手礼40g</view>
+      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}' bindtap='showModal'></image></view>
+    </view>
+    <view class="item">
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>{{goods[0]['goods_name']}}</view>
+      <view class='item_2'><view class='item_font2'>￥{{goods[0]['price']}}</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}' bindtap='showModal'></image></view>
+    </view>
+    <view class="item">
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>小情歌伴手礼40g</view>
+      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
+    </view>
+    <view class="item">
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>小情歌伴手礼40g</view>
+      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
+    </view>
+    <view class="item">
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>小情歌伴手礼40g</view>
+      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
+    </view>
+    <view class="item">
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>小情歌伴手礼40g</view>
+      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
+    </view>
+    <view class="item">
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>小情歌伴手礼40g</view>
+      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
+    </view>
+    <view class="item">
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>小情歌伴手礼40g</view>
+      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
+    </view>
+  </view>
+</view>
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='bt_item1'>
+    <image style='width:150rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image>
+    <view class='item_bo'>
+      <view>小情歌伴手礼40g</view>
+      <view style='color:red'>￥200.00</view>
+    </view>
+  </view>
+  <view class='band'></view>
+  <view class='bt_item1' style='flex-direction:column'>
+    <view>口味：</view>
+    <view style='display:inline-flex;'>
+      <view id='1' bindtap='clickAttr'>
+        <block wx:if="{{1 == select_attr}}">
+        <view class='attr_item' style='background:#707070'>{{goods[0]['attr'][0]}}</view>
+        </block>
+        <block wx:else>
+        <view class='attr_item' style='background:#fff'>{{goods[0]['attr'][0]}}</view>
+        </block>
+      </view>
+      <view id='2' bindtap='clickAttr'>
+        <block wx:if="{{2 == select_attr}}">
+        <view class='attr_item' style='background:#707070'>{{goods[0]['attr'][1]}}</view>
+        </block>
+        <block wx:else>
+        <view class='attr_item' style='background:#fff'>{{goods[0]['attr'][1]}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class='band'></view>
+  <view class='bt_item1' style='justify-content:space-between;height:60rpx;'>
+    <view class='num'>数量：</view>
+    <view class='num' style='display:flex;flex-direction:row;align-items:center'>
+      <view>库存99</view>
+      <view class='round' bindtap='subtraction'>一</view>
+      <view style='margin-left:20rpx;'>{{num}}</view>
+      <view class='round' bindtap='add'>十</view>
+    </view>
+  </view>
+  <view class='button'>加入购物车</view>
+</view>
+
+<!--空白-->
+<view style='width:100%;height:50rpx;'></view>
