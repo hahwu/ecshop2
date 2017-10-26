@@ -2,7 +2,7 @@
 .swiper{
   width:100%;
   height: 400rpx;
-  border-bottom: 1px solid #707070;
+  border-bottom: 1px solid #cccccc;
 }
 .slide-image{
   width:100%;
@@ -31,22 +31,27 @@
   padding-top:20rpx;
 }
 .foot{
- width: 100%;
+ width:100%;
+ height:140rpx;
  overflow: hidden;
  position: fixed;
  bottom: 0;
  left: 0;
+ border-top:1rpx solid #cccccc;
  z-index: 2000;
- background: #707070;
+ background: #fff;
  display:flex;
  flex-direction:row;
  align-items: center;
- justify-content: center;
+ justify-content: space-around;
  align-content: center;
 }
 .foot_item{
+  border:1rpx solid #cccccc;
+  font-size:35rpx;
+  line-height:100rpx;
   width:335rpx;
-  height:50rpx;
-  background:red;
-  margin-left: 20rpx;
+  height:100rpx;
+  text-align: center;
+  border-radius: 10rpx;
 }

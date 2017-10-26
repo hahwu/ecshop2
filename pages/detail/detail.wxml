@@ -27,7 +27,7 @@
   <!--详情页end--> 
   <!--底部固定begin-->
   <view class='foot'>
-    <view class='foot_item'>立即购买</view>
+    <view class='foot_item' style='background:#f15a0c;color:white'>立即购买</view>
     <view class='foot_item'>加入购物车</view>
   </view>
   <!--底部固定end-->
