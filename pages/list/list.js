@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    num:1
   },
 
   /**
@@ -77,5 +77,79 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  showModal: function () {
+    // 显示遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+      showModalStatus: true
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 200)
+  },
+  hideModal: function () {
+    // 隐藏遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+      select_attr: 0,
+      num: 1
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        showModalStatus: false
+      })
+    }.bind(this), 200)
+  },
+  clickAttr: function (res) {
+    var that = this
+    that.setData({
+      select_attr: res.currentTarget.id
+    })
+  },
+  subtraction: function (res) {
+    if (this.data.num > 1) {
+      var newnum = this.data.num - 1
+      this.setData({
+        num: newnum
+      })
+    }
+  },
+  add: function (res) {
+    if (this.data.num < 99) {
+      var newnum = this.data.num + 1
+      this.setData({
+        num: newnum
+      })
+    }
+  },
+  navto: function (res) {
+    wx.navigateTo({
+      url: '../list/list?name=' + res.currentTarget.id,
+    })
+  },
+  itemto: function (res) {
+    wx.navigateTo({
+      url: '../detail/detail?goods_id=' + res.currentTarget.id,
+    })
   }
 })

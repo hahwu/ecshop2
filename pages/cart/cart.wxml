@@ -1,0 +1,31 @@
+<!--pages/cart/cart.wxml-->
+<view class='container cart' style='background:#fff;'>
+  <view class='exam top'>购物车</view>
+  <view class='exam top' style='width:200rpx;'>编辑</view>
+  <view class='exam body'>
+    <view class='exam item'>
+      <icon type='success' size='20' color='black' style='margin-top:10rpx;margin-left:5rpx;'></icon>
+      <image src='../../img/item.jpg' style='height:150rpx;width:150rpx;margin-left:10rpx;' mode='widthFix'></image>
+      <view class='item_font'>
+        <view style='font-weight: bold;'>脆脆鲨小情歌伴手礼...</view>
+        <view style='color:#d2d2d2'>（6种口味6粒360g）</view>
+        <view style='color:red'>￥69.00</view>
+      </view>
+      <view class='num' style='display:flex;flex-direction:row;align-items:center'>
+      <view class='round' bindtap='subtraction'>一</view>
+      <view style='margin-left:20rpx;'>1</view>
+      <view class='round' bindtap='add'>十</view>
+    </view>
+    </view>
+  </view>
+  <view class='exam foot'>
+    <view style='width:200rpx'>
+    <icon type='success' size='20' color='black' style='margin-top:10rpx;margin-left:5rpx;'></icon>
+    全选</view>
+    <view style='width:200rpx;display:flex;flex-direction:row'>
+      <view>合计:</view>
+      <view style='color:red;'>￥69.00</view>
+    </view>
+    <view style='width:200rpx'>结算({{total}})</view>
+  </view>
+</view>
