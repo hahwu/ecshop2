@@ -28,9 +28,9 @@
   border-top:1rpx solid #cccccc;
 }
 .foot view{
-  height:80rpx;
-  font-size:30rpx;
-  line-height:80rpx;
+  height:120rpx;
+  font-size:35rpx;
+  line-height:120rpx;
   text-align: center;
 }
 .body{
@@ -48,6 +48,15 @@
   width:690rpx;
   height:150rpx;
   margin-top:20rpx;
+}
+.item_top{
+  width:690rpx;
+  height:120rpx;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  font-size:35rpx;
 }
 .item_font{
   margin-left: 10rpx;

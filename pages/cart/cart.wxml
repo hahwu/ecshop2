@@ -3,9 +3,14 @@
   <view class='exam top'>购物车</view>
   <view class='exam top' style='width:200rpx;'>编辑</view>
   <view class='exam body'>
+    <view class='exam item_top' wx:if="{{showTop}}">
+      <icon type='success' size='20' color='black' style='margin-top:10rpx;'></icon>
+      <view style='display:inline;float:right'>全选</view>
+      <view>删除所有</view>
+    </view>
     <view class='exam item'>
-      <icon type='success' size='20' color='black' style='margin-top:10rpx;margin-left:5rpx;'></icon>
-      <image src='../../img/item.jpg' style='height:150rpx;width:150rpx;margin-left:10rpx;' mode='widthFix'></image>
+      <icon type='success' size='20' color='black' style='margin-top:10rpx;'></icon>
+      <image src='../../img/item.jpg' style='height:150rpx;width:150rpx;margin-left:20rpx;' mode='widthFix'></image>
       <view class='item_font'>
         <view style='font-weight: bold;'>脆脆鲨小情歌伴手礼...</view>
         <view style='color:#d2d2d2'>（6种口味6粒360g）</view>
@@ -18,14 +23,13 @@
     </view>
     </view>
   </view>
-  <view class='exam foot'>
-    <view style='width:200rpx'>
+  <view class='exam foot' wx:if="{{showModel}}">
     <icon type='success' size='20' color='black' style='margin-top:10rpx;margin-left:5rpx;'></icon>
-    全选</view>
-    <view style='width:200rpx;display:flex;flex-direction:row'>
+    <view>全选</view>
+    <view style='width:250rpx;display:flex;flex-direction:row'>
       <view>合计:</view>
       <view style='color:red;'>￥69.00</view>
     </view>
-    <view style='width:200rpx'>结算({{total}})</view>
+    <view style='width:200rpx;height:80rpx;line-height:80rpx;border:1rpx solid #cccccc;background:#ffcc01;border-radius:10rpx;'>结算({{total}})</view>
   </view>
 </view>
