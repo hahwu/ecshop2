@@ -10,3 +10,15 @@
   background: #efefef;
   font-family: '雅黑'
 } 
+.flex_row{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.flex_column{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
