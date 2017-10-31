@@ -1,12 +1,14 @@
 <!--pages/cart/cart.wxml-->
 <view class='container cart' style='background:#fff;'>
   <view class='exam top'>购物车</view>
-  <view class='exam top' style='width:200rpx;'>编辑</view>
+  <view class='exam top' style='width:200rpx;' bindtap='edit'>{{text}}</view>
   <view class='exam body'>
     <view class='exam item_top' wx:if="{{showTop}}">
-      <icon type='success' size='20' color='black' style='margin-top:10rpx;'></icon>
-      <view style='display:inline;float:right'>全选</view>
-      <view>删除所有</view>
+      <view style='width:200rpx;display:flex;flex-direction:row'>
+        <icon type='success' size='20' color='black'></icon>
+        <view style='margin-left:10rpx;'>全选</view>
+      </view>
+      <view class='item_top_font'>删除所有</view>
     </view>
     <view class='exam item'>
       <icon type='success' size='20' color='black' style='margin-top:10rpx;'></icon>
@@ -23,7 +25,7 @@
     </view>
     </view>
   </view>
-  <view class='exam foot' wx:if="{{showModel}}">
+  <view class='exam foot' wx:if="{{showFoot}}">
     <icon type='success' size='20' color='black' style='margin-top:10rpx;margin-left:5rpx;'></icon>
     <view>全选</view>
     <view style='width:250rpx;display:flex;flex-direction:row'>

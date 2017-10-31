@@ -1,20 +1,22 @@
-// pages/cart/cart.js
+// pages/user/user.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showFoot:true,
-    showTop:false,
-    text:'编辑',
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(app.globalData.userInfo)
+    this.setData({
+      userinfo:app.globalData.userInfo
+    })
   },
 
   /**
@@ -64,20 +66,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  edit:function(res){
-    if(this.data.text == '编辑'){
-      this.setData({
-        showTop: true,
-        showFoot: false,
-        text: '完成'
-      })
-    }else{
-      this.setData({
-        showTop: false,
-        showFoot: true,
-        text: '编辑'
-      })
-    }
   }
 })

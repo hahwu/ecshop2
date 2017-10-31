@@ -1,0 +1,11 @@
+<!--pages/user/user.wxml-->
+<view class='container'>
+  <view class='user exam'>
+    <view class='user_item'>
+      <image src='{{userinfo.avatarUrl}}'  mode='widthFix' style='border-radius:50%'></image>
+      <view style='margin-left:15rpx;'>{{userinfo.nickName}}</view>
+    </view>
+    <view>>></view> 
+  </view>
+  <view class='body'></view>
+</view>
