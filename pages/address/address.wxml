@@ -1,0 +1,6 @@
+<!--pages/address/address.wxml-->
+<view class='container'>
+  <view class='info'>暂无地址</view>
+  <view class='body'></view>
+  <view class='foot' bindtap='chooseAdd'>添加新地址</view>
+</view>

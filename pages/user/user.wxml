@@ -1,11 +1,54 @@
 <!--pages/user/user.wxml-->
 <view class='container'>
-  <view class='user exam'>
+  <view class='user'>
     <view class='user_item'>
       <image src='{{userinfo.avatarUrl}}'  mode='widthFix' style='border-radius:50%'></image>
       <view style='margin-left:15rpx;'>{{userinfo.nickName}}</view>
     </view>
     <view>>></view> 
   </view>
-  <view class='body'></view>
+  <view class='body flex_column'>
+    <view class='body_item flex_row' bindtap='webto'>
+      <view class='body_item_info flex_row' style='justify-content:space-between'>
+        <view>收货地址</view>
+        <view>></view>
+      </view>
+    </view>
+   <view class='body_item flex_row'>
+      <view class='body_item_info flex_row' style='justify-content:space-between'>
+        <view>我的订单</view>
+        <view>></view>
+      </view>
+    </view>
+    <view class='body_item flex_row'>
+      <view class='body_item_info flex_row' style='justify-content:space-between'>
+        <view>系统通知</view>
+        <view>></view>
+      </view>
+    </view>
+    <view class='body_item flex_row'>
+      <view class='body_item_info flex_row' style='justify-content:space-between'>
+        <view>会员卡</view>
+        <view>></view>
+      </view>
+    </view>
+    <view class='body_item flex_row'>
+      <view class='body_item_info flex_row' style='justify-content:space-between'>
+        <view>优惠券</view>
+        <view>></view>
+      </view>
+    </view>
+    <view class='body_item flex_row'>
+      <view class='body_item_info flex_row' style='justify-content:space-between'>
+        <view>积分</view>
+        <view>></view>
+      </view>
+    </view>
+    <view class='body_item flex_row'>
+      <view class='body_item_info flex_row' style='justify-content:space-between'>
+        <view>余额</view>
+        <view>></view>
+      </view>
+    </view>
+  </view>
 </view>

@@ -1,0 +1,6 @@
+<!--pages/order/order.wxml-->
+<view class='container'>
+  <view class='top'>
+    <view class='top_item'>全部</view>
+  </view>
+</view>
