@@ -8,7 +8,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   background: #efefef;
-  font-family: '雅黑'
+  font-family: '苹方'
 } 
 .flex_row{
   display:flex;

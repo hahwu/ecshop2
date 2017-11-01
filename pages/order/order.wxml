@@ -7,4 +7,30 @@
     <view class='top_item'>待收货</view>
     <view class='top_item'>待评价</view>
   </view>
+  <view class='body flex_column '>
+    <view class='body_item flex_column'>
+      <view class='body_item_1 flex_row'>
+        <view>2017-10-31 10:31:54</view>
+        <view>已关闭</view>
+      </view>
+      <view class='body_item_2 flex_row'>
+        <view class='body_item_info flex_row'>
+          <image src='../../img/item.jpg' mode='widthFix'></image>
+          <view style='margin-left:20rpx;'>雅蜜小情歌伴手礼420G</view>
+        </view>
+        <view class='flex_column' style='width:150rpx;margin:0'>
+          <view class='item_font' style='height:50rpx;'>￥69.00</view>
+          <view class='item_font' style='height:50rpx;'>x1</view>
+        </view>
+      </view>
+      <view class='body_item_3 flex_row'>
+        <view>共1件</view>
+        <view>实付:</view>
+        <view style='color:red'>￥69.00</view>
+      </view>
+    </view>
+    <view class='body_item'></view>
+    <view class='body_item'></view>
+  </view>
+  <view class='foot'></view>
 </view>
