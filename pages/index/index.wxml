@@ -9,90 +9,66 @@
       </block>    
   </swiper>
   <!--轮播图end-->
-  <!--导航栏begin-->
+   <!--导航栏begin-->
   <view class="nav">
     <view class="nav_item" id='今日特价' bindtap='navto'>
-      <image class="nav_item_img" mode="widthFix"src="http://47.92.66.126/tomato/{{img1}}"/>
+      <image class="nav_item_img" mode="widthFix"src="../../img/nav_1.jpg"/>
       <view class='nav_item_font'>今日特价</view>
     </view>
     <view class="nav_item">
-      <image class="nav_item_img" mode="widthFix"src="http://47.92.66.126/tomato/{{img1}}"/>
+      <image class="nav_item_img" mode="widthFix"src="../../img/nav_2.jpg"/>
       <view class='nav_item_font'>领券中心</view>
     </view>
     <view class="nav_item" id='新品尝鲜' bindtap='navto'>
-      <image class="nav_item_img" mode="widthFix"src="http://47.92.66.126/tomato/{{img1}}"/>
+      <image class="nav_item_img" mode="widthFix"src="../../img/nav_3.jpg"/>
       <view class='nav_item_font'>新品尝鲜</view>
     </view>
     <view class="nav_item">
-      <image class="nav_item_img" mode="widthFix"src="http://47.92.66.126/tomato/{{img1}}"/>
+      <image class="nav_item_img" mode="widthFix"src="../../img/nav_4.jpg"/>
       <view class='nav_item_font'>会员充值</view>
     </view>
     <view class="nav_item" id='创新中式' bindtap='navto'>
-      <image class="nav_item_img" mode="widthFix"src="http://47.92.66.126/tomato/{{img1}}"/>
+      <image class="nav_item_img" mode="widthFix"src="../../img/nav_5.jpg"/>
       <view class='nav_item_font'>创新中式</view>
     </view>
     <view class="nav_item" id='下午茶点' bindtap='navto'>
-      <image class="nav_item_img" mode="widthFix"src="http://47.92.66.126/tomato/{{img1}}"/>
+      <image class="nav_item_img" mode="widthFix"src="../../img/nav_6.jpg"/>
       <view class='nav_item_font'>下午茶点</view>
     </view>
     <view class="nav_item" id='伴手礼品' bindtap='navto'>
-      <image class="nav_item_img" mode="widthFix"src="http://47.92.66.126/tomato/{{img1}}"/>
+      <image class="nav_item_img" mode="widthFix"src="../../img/nav_7.jpg"/>
       <view class='nav_item_font'>伴手礼品</view>
     </view>
     <view class="nav_item" id='所有产品' bindtap='navto'>
-      <image class="nav_item_img" mode="widthFix"src="http://47.92.66.126/tomato/{{img1}}"/>
+      <image class="nav_item_img" mode="widthFix"src="../../img/nav_8.jpg"/>
       <view class='nav_item_font'>所有产品</view>
     </view>
   </view>
   <!--导航栏end-->
+ 
   <!--主体begin-->
-  <view class="body">
-    <view class='body_gd'>
+  <view class="body flex_column">
+    <view class='body_gd flex_colum'>
       <view style='font-size:40rpx;font-weight:bold;'>爱上·零食</view>
       <image style="width:500rpx;margin-top:15rpx;" mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}' ></image>
+    </view>
+    <view class='item_list flex_row'>
+      <view class="item" bindtap='itemto' id='{{goods[0]["goods_id"]}}'>
+      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
+      <view class='item_font'>小情歌伴手礼40g</view>
+      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}' bindtap='showModal'></image></view>
     </view>
     <view class="item" bindtap='itemto' id='{{goods[0]["goods_id"]}}'>
       <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
       <view class='item_font'>小情歌伴手礼40g</view>
       <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}' bindtap='showModal'></image></view>
     </view>
-    <view class="item">
-      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
-      <view class='item_font'>{{goods[0]['goods_name']}}</view>
-      <view class='item_2'><view class='item_font2'>￥{{goods[0]['price']}}</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}' bindtap='showModal'></image></view>
     </view>
-    <view class="item">
-      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
-      <view class='item_font'>小情歌伴手礼40g</view>
-      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
-    </view>
-    <view class="item">
-      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
-      <view class='item_font'>小情歌伴手礼40g</view>
-      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
-    </view>
-    <view class="item">
-      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
-      <view class='item_font'>小情歌伴手礼40g</view>
-      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
-    </view>
-    <view class="item">
-      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
-      <view class='item_font'>小情歌伴手礼40g</view>
-      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
-    </view>
-    <view class="item">
-      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
-      <view class='item_font'>小情歌伴手礼40g</view>
-      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
-    </view>
-    <view class="item">
-      <image class="userinfo-avatar" mode='widthFix'src="http://47.92.66.126/tomato/{{img1}}"/>
-      <view class='item_font'>小情歌伴手礼40g</view>
-      <view class='item_2'><view class='item_font2'>￥20.0</view><image style='width:30rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image></view>
-    </view>
+    
+    
   </view>
-</view>
+  <!--主体end-->
+</view>    
 <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
   <view class='bt_item1'>

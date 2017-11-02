@@ -11,51 +11,53 @@
 }
 .slide-image{
   width:100%;
-  height: 500rpx;
+  height: 400rpx;
 }
 /*导航栏*/
 .nav{
   margin-top:10rpx;
   width: 100%;
   background:white;
-  padding:30rpx;
+  padding:30rpx 0 30rpx 0;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 .nav_item{
-  margin-top:35rpx;
-  margin-left: 88rpx;
-  width:80rpx;
-  height:100rpx;
+  margin-top:25rpx;
+  margin-left: 74rpx;
+  margin-bottom: 20rpx;
+  width:100rpx;
+  height:130rpx;
+  text-align: center;
 }
 .nav_item_img{
   width:100%;
 }
 .nav_item_font{
-  font-size: 20rpx;
+  font-size: 25rpx;
 }
 /*主体*/
 .body{
   background:white;
   margin-top: 10rpx;
-  padding-left: 50rpx;
   display: flex;
   width:100%;
-  flex-direction:row;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 .body_gd{
   margin-top:30rpx;
+  width:500rpx;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.item_list{
   width:690rpx;
-  display: flex;
-  flex-direction:column;
-  align-items: center
+  flex-flow: wrap;
+  justify-content: space-between;
 }
 .item{
   margin-top:30rpx;
-  margin-right:55rpx;
   display: flex;
   flex-direction: column;
   width:300rpx;

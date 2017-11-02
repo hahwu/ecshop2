@@ -1,0 +1,9 @@
+<!--pages/mess/mess.wxml-->
+<view class='top flex_column'>
+  <view class='item flex_row'>
+    <view class='select' wx:if='{{choose == 1}}' id='1' bindtap='choose'>系统消息</view>
+    <view wx:else id='1' bindtap='choose'>系统消息</view>
+    <view class='select' id='2' bindtap='choose' wx:if='{{choose == 2}}'>互动消息</view>
+    <view id='2' bindtap='choose' wx:else>互动消息</view>
+  </view>
+</view>
