@@ -11,10 +11,10 @@
     
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    
+    "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "晓零食",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
     "list": [
@@ -25,13 +25,15 @@
         "text": "首页"
       },
       {
+        "selectedIconPath": "img/cart_s.jpg",
         "iconPath": "img/cart.jpg",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/cart/cart",
         "text": "购物车"
       },
       {
+        "selectedIconPath": "img/pers_s.jpg",
         "iconPath": "img/pers.jpg",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/user/user",
         "text": "我的"
       }
     ]

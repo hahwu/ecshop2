@@ -10,6 +10,13 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'https://www.yuncms.online/tomato/wx_onlogin.php',
+          data:{code:res.code},
+          success:function(res){
+            console.log(res.data)
+          }
+        })
       }
     })
     // 获取用户信息

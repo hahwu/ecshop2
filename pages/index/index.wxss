@@ -70,11 +70,11 @@
 }
 .item_font{
   margin-top:10rpx;
-  font-size: 25rpx;
+  font-size: 30rpx;
 }
 .item_font2{
   margin-top:10rpx;
-  font-size: 20rpx;
+  font-size: 25rpx;
   color:red;
 }
 .userinfo-avatar {
@@ -114,7 +114,7 @@
  align-items: center;
 }
 .bt_item1{
-  font-size:25rpx;
+  font-size:35rpx;
   width:690rpx;
   display:flex;
   flex-direction:row;
@@ -136,16 +136,16 @@
 }
 .button{
   width:100%;
-  height:80rpx;
+  height:120rpx;
   background: #ffcc01;
   color: white;
-  font-size: 30rpx;
-  line-height: 80rpx;
+  font-size: 35rpx;
+  line-height: 120rpx;
   text-align: center;
 }
 .num{
-  height:40rpx;
-  line-height:40rpx;
+  height:80rpx;
+  line-height:80rpx;
 }
 .round{
   margin-left: 20rpx;
@@ -161,9 +161,9 @@
   margin-right: 25rpx;
   padding: 10rpx 15rpx 10rpx 15rpx;
   display: inline-flex;
-  height:35rpx;
-  line-height:35rpx;
-  font-size: 20rpx;
+  height:55rpx;
+  line-height:55rpx;
+  font-size: 30rpx;
   border:1rpx solid #707070;
   border-radius: 35rpx;
   background:#efefaf;

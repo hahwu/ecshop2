@@ -19,7 +19,7 @@ Page({
     var that = this
     wx.request({
       url: 'https://www.yuncms.online/tomato/wx.php',
-      data: {},
+      data: {cat:options.id},
       success: function (res) {
         console.log(res.data)
         that.setData({

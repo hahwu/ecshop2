@@ -1,5 +1,6 @@
 {
-  "navigationBarBackgroundColor": "black",
+  "navigationBarBackgroundColor": "#000000",
   "navigationBarTitleText": "商品列表",
-  "navigationBarTextStyle": "white"
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "#fff"
 }

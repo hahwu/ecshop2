@@ -68,11 +68,11 @@
 }
 .item_font{
   margin-top:10rpx;
-  font-size: 25rpx;
+  font-size: 30rpx;
 }
 .item_font2{
   margin-top:10rpx;
-  font-size: 20rpx;
+  font-size: 25rpx;
   color:red;
 }
 .userinfo-avatar {

@@ -69,8 +69,9 @@ Page({
   }
   ,
   webto:function(res){
+    var nav = res.currentTarget.id
     wx.navigateTo({
-      url: '../address/address',
+      url: '../' + nav +'/' + nav,
     })
   }
 })

@@ -1,4 +1,4 @@
-//index.js
+  //index.js
 //获取应用实例
 
 const app = getApp()
@@ -25,12 +25,12 @@ Page({
     var that = this
     wx.request({
       url: 'https://www.yuncms.online/tomato/wx.php',
-      data:{},
+      data:{cat:'all'},
       success:function(res){
         console.log(res.data)
         that.setData({
           goods:res.data,
-          img1:res.data[0].img_url,
+          img1:res.data[1].img_url,
         })
       }
     })
@@ -69,7 +69,7 @@ Page({
       hasUserInfo: true
     })
   },
-  showModal: function () {
+  showModal: function (res) {
     // 显示遮罩层
     var animation = wx.createAnimation({
       duration: 200,
@@ -88,6 +88,10 @@ Page({
         animationData: animation.export()
       })
     }.bind(this), 200)
+    console.log(this.data.goods)
+    this.setData({
+      cart:this.data.goods[1]
+    })
   },
   hideModal: function () {
     // 隐藏遮罩层
@@ -134,13 +138,31 @@ Page({
     }
   },
   navto:function(res){
+    console.log(res.currentTarget.id)
+    switch (res.currentTarget.id){
+      case '1': var name = '今日特价'
+              break
+      case '4': var name = '新品尝鲜'
+              break
+      case '5': var name = '创新中式'
+              break
+      case '6': var name = '下午茶点'
+              break
+      case '7': var name = '伴手礼品'
+              break
+      case 'all': var name = '所有产品'
+    }
+    console.log(name)
     wx.navigateTo({
-      url: '../list/list?name=' + res.currentTarget.id,
+      url: '../list/list?name=' + name + '&id=' + res.currentTarget.id,
     })
   },
   itemto:function(res){
     wx.navigateTo({
       url: '../detail/detail?goods_id=' + res.currentTarget.id,
     })
+  },
+  add_cart:function(res){
+    
   }
 })

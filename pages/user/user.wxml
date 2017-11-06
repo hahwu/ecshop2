@@ -8,47 +8,60 @@
     <view>>></view> 
   </view>
   <view class='body flex_column'>
-    <view class='body_item flex_row' bindtap='webto'>
+    <view class='body_item flex_row' id='address' bindtap='webto'>
       <view class='body_item_info flex_row' style='justify-content:space-between'>
-        <view>收货地址</view>
-        <view>></view>
+        <view class='flex_row'>
+          <image src='../../img/user_1.jpg' mode='widthFix' style='width:80rpx;'></image>
+          <view>收货地址</view>
+        </view>
+        <view style='margin-right:30rpx;'>></view>
       </view>
     </view>
-   <view class='body_item flex_row'>
+   <view class='body_item flex_row' id='order' bindtap='webto'>
       <view class='body_item_info flex_row' style='justify-content:space-between'>
-        <view>我的订单</view>
-        <view>></view>
+        <view class='flex_row'>
+          <image src='../../img/user_2.jpg' mode='widthFix' style='width:80rpx;'></image>
+          <view>我的订单</view>
+        </view>
+        <view style='margin-right:30rpx;'>></view>
       </view>
     </view>
-    <view class='body_item flex_row'>
+    <view class='body_item flex_row' id='mess' bindtap='webto'>
       <view class='body_item_info flex_row' style='justify-content:space-between'>
-        <view>系统通知</view>
-        <view>></view>
-      </view>
-    </view>
-    <view class='body_item flex_row'>
-      <view class='body_item_info flex_row' style='justify-content:space-between'>
-        <view>会员卡</view>
-        <view>></view>
-      </view>
-    </view>
-    <view class='body_item flex_row'>
-      <view class='body_item_info flex_row' style='justify-content:space-between'>
-        <view>优惠券</view>
-        <view>></view>
+        <view class='flex_row'>
+          <image src='../../img/user_3.jpg' mode='widthFix' style='width:80rpx;'></image>
+          <view>系统通知</view>
+        </view>
+        <view style='margin-right:30rpx;'>></view>
       </view>
     </view>
     <view class='body_item flex_row'>
       <view class='body_item_info flex_row' style='justify-content:space-between'>
-        <view>积分</view>
-        <view>></view>
+        <view class='flex_row'>
+          <image src='../../img/user_4.jpg' mode='widthFix' style='width:80rpx;'></image>
+          <view>会员卡</view>
+        </view>
+       <view style='margin-right:30rpx;'>></view>
       </view>
     </view>
     <view class='body_item flex_row'>
       <view class='body_item_info flex_row' style='justify-content:space-between'>
-        <view>余额</view>
-        <view>></view>
+        <view class='flex_row'>
+          <image src='../../img/user_5.jpg' mode='widthFix' style='width:80rpx;'></image>
+          <view>优惠券</view>
+        </view>
+        <view style='margin-right:30rpx;'>></view>
       </view>
     </view>
+    <view class='body_item flex_row'>
+      <view class='body_item_info flex_row' style='justify-content:space-between'>
+        <view class='flex_row'>
+          <image src='../../img/user_6.jpg' mode='widthFix' style='width:80rpx;'></image>
+          <view>积分</view>
+        </view>
+        <view style='margin-right:30rpx;'>></view>
+      </view>
+    </view>
+    
   </view>
 </view>
