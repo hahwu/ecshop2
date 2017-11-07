@@ -84,10 +84,10 @@
     <view wx:for="{{cart.attr}}">
       <view id='{{index}}' bindtap='clickAttr'>
         <block wx:if="{{index == select_attr}}">
-          <view class='attr_item' style='background:#707070;color:white;'>{{cart['attr'][0]}}</view>
+          <view class='attr_item' style='background:#707070;color:white;'>{{item.text}}</view>
         </block>
         <block wx:else>
-          <view class='attr_item' style='background:#fff'>{{cart['attr'][0]}}</view>
+          <view class='attr_item' style='background:#fff'>{{item.text}}</view>
         </block>
       </view>
     </view>

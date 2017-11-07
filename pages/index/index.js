@@ -88,10 +88,11 @@ Page({
         animationData: animation.export()
       })
     }.bind(this), 200)
-    console.log(this.data.goods)
     this.setData({
-      cart:this.data.goods[1]
+      cart: this.data.goods[res.currentTarget.id]
     })
+    wx.setStorageSync('cart_good', this.data.goods[res.currentTarget.id])
+    wx.setStorageSync('attr', this.data.goods[res.currentTarget.id]['attr'][0])
   },
   hideModal: function () {
     // 隐藏遮罩层
@@ -117,6 +118,7 @@ Page({
   },
   clickAttr:function(res){
     var that = this
+    wx.setStorageSync('attr_id', res.currentTarget.id)
     that.setData({
       select_attr:res.currentTarget.id
     })
@@ -163,6 +165,20 @@ Page({
     })
   },
   add_cart:function(res){
-    
+    var goods = wx.getStorageSync('cart_good')
+    var attr = wx.getStorageSync('attr')
+    wx.request({
+      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      data:{
+        goods_number:this.data.num,
+        goods_id:goods['goods_id'],
+        user_id:wx.getStorageSync('user_id'),
+        goods_attr:attr['text'],
+        goods_attr_id:attr['id'],
+      },
+      success:function(res){
+        console.log(res.data)
+      }
+    })
   }
 })

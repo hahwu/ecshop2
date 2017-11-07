@@ -14,7 +14,7 @@ App({
           url: 'https://www.yuncms.online/tomato/wx_onlogin.php',
           data:{code:res.code},
           success:function(res){
-            console.log(res.data)
+            wx.setStorageSync('user_id', res.data.user_id)
           }
         })
       }
@@ -40,6 +40,7 @@ App({
       }
     })
   },
+
   globalData: {
     userInfo: null
   }
