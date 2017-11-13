@@ -78,7 +78,6 @@ Page({
   
   },
   edit:function(res){
-    this.test()
     if(this.data.text == '编辑'){
       this.setData({
         showTop: true,
@@ -92,5 +91,45 @@ Page({
         text: '编辑'
       })
     }
+  },
+  subtraction:function(res){
+    var index = res.target.dataset.num
+    var goods_num = this.data.carts[index]['goods_number']
+    if(goods_num <2) return false
+    var that = this
+    wx.request({
+      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      data:{
+        mode:'subtraction',
+        rec_id:res.currentTarget.id,
+      },
+      success:function(res){
+        var carts = that.data.carts
+        carts[index]['goods_number'] = res.data
+        that.setData({
+          carts:carts
+        })
+      }
+    })
+  },
+  add:function(res){
+    var index = res.target.dataset.num
+    var goods_num = this.data.carts[index]['goods_number']
+    if (goods_num < 2) return false
+    var that = this
+    wx.request({
+      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      data: {
+        mode: 'add',
+        rec_id: res.currentTarget.id,
+      },
+      success: function (res) {
+        var carts = that.data.carts
+       console.log(carts[index])
+        that.setData({
+          carts: carts
+        })
+      }
+    })
   }
 })

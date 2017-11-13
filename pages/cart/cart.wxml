@@ -11,20 +11,20 @@
       <view class='item_top_font'>删除所有</view>
     </view>
     <block wx:for="{{carts}}">
-    <view class='exam item'>
-      <icon type='success' size='20' color='black' style='margin-top:10rpx;'></icon>
-      <image src='https://www.yuncms.online/tomato/{{item.img_url}}' style='height:150rpx;width:150rpx;margin-left:20rpx;' mode='widthFix'></image>
-      <view class='item_font'>
-        <view style='font-weight: bold;'>{{item.goods_name}}</view>
-        <view style='color:#d2d2d2'>{{item.goods_attr}}</view>
-        <view style='color:red'>￥{{item.goods_price}}</view>
+      <view class='exam item' id='{{item.rec_id}}'>
+        <icon type='success' size='20' color='black' style='margin-top:10rpx;'></icon>
+        <image src='https://www.yuncms.online/tomato/{{item.img_url}}' style='height:150rpx;width:150rpx;margin-left:20rpx;' mode='widthFix'></image>
+        <view class='item_font'>
+          <view style='font-weight: bold;'>{{item.goods_name}}</view>
+          <view style='color:#d2d2d2'>{{item.goods_attr}}</view>
+          <view style='color:red'>￥{{item.goods_price}}</view>
+        </view>
+        <view class='num' style='display:flex;flex-direction:row;align-items:center'>
+          <view class='round' bindtap='subtraction' data-num="{{index}}" id='{{item.rec_id}}'>一</view>
+          <view style='margin-left:20rpx;'>{{item.goods_number}}</view>
+          <view class='round' bindtap='add' data-num="{{index}}" id='{{item.rec_id}}'>十</view>
+        </view>
       </view>
-      <view class='num' style='display:flex;flex-direction:row;align-items:center'>
-      <view class='round' bindtap='subtraction'>一</view>
-      <view style='margin-left:20rpx;'>{{item.goods_number}}</view>
-      <view class='round' bindtap='add'>十</view>
-    </view>
-    </view>
     </block>
   </view>
   <view class='exam foot' wx:if="{{showFoot}}">
