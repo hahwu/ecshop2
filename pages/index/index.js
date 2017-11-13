@@ -22,6 +22,7 @@ Page({
     })
   },
   onLoad: function () {
+    this.hideModal()
     var that = this
     wx.request({
       url: 'https://www.yuncms.online/tomato/wx.php',
@@ -165,20 +166,25 @@ Page({
     })
   },
   add_cart:function(res){
+    this.hideModal()
     var goods = wx.getStorageSync('cart_good')
     var attr = wx.getStorageSync('attr')
     wx.request({
       url: 'https://www.yuncms.online/tomato/wx_cart.php',
       data:{
+        mode:'insert',
         goods_number:this.data.num,
         goods_id:goods['goods_id'],
         user_id:wx.getStorageSync('user_id'),
         goods_attr:attr['text'],
         goods_attr_id:attr['id'],
       },
-      success:function(res){
-        console.log(res.data)
+      success:function(res){ 
+        console.log(res.data) 
+        wx.switchTab({
+          url: '../cart/cart',
+        })
       }
     })
-  }
+  },
 })

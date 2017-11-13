@@ -9,12 +9,24 @@ Page({
     showTop:false,
     text:'编辑',
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    wx.request({
+      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      data:{
+        mode:'list',
+        user_id:wx.getStorageSync('user_id'),
+      },
+      success:function(res){
+        console.log(res.data)
+        that.setData({
+          carts:res.data
+        })
+      }
+    })
   },
 
   /**
@@ -66,6 +78,7 @@ Page({
   
   },
   edit:function(res){
+    this.test()
     if(this.data.text == '编辑'){
       this.setData({
         showTop: true,
