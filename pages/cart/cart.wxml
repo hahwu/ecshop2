@@ -4,17 +4,19 @@
   <view class='exam top' style='width:200rpx;' bindtap='edit'>{{text}}</view>
   <view class='item_top' wx:if="{{showTop}}">
       <view style='width:200rpx;display:flex;flex-direction:row'>
-        <icon type='success' size='20' color='black'></icon>
+        <icon type='success' size='20' color='black' wx:if='{{select}}'></icon>
+        <icon type='success' size='20' color='gray' wx:else></icon>
         <view style='margin-left:10rpx;'>全选</view>
       </view>
-      <view class='item_top_font'>删除所有</view>
+      <view class='item_top_font' bindtap='delete'>删除所选</view>
     </view>
   <view class='exam body' style="margin-top:{{margin}}rpx;">
     
     <block wx:for="{{carts}}" >
       <view class='exam item' id='{{item.rec_id}}'>
-        <icon type='success' size='20' color='black' style='margin-top:10rpx;'></icon>
-        <image src='https://www.yuncms.online/tomato/{{item.img_url}}' style='width:200rpx;margin-left:20rpx;' mode='widthFix'></image>
+        <icon type='success' size='20' color='black' style='margin-top:10rpx;' wx:if="{{item.checked}}" bindtap='select' id='{{item.rec_id}}'></icon>
+        <icon type='success' size='20' color='gray' style='margin-top:10rpx;' wx:else bindtap='select' id='{{item.rec_id}}'></icon>
+        <image src='https://www.yuncms.online/tomato/{{item.img_url}}' style='width:200rpx;margin-left:20rpx;' mode='widthFix' ></image>
         <view class='item_font'>
           <view style='font-weight: bold;'>{{item.goods_name}}</view>
           <view style='color:#d2d2d2'>{{item.goods_attr}}</view>
@@ -29,7 +31,8 @@
     </block>
   </view>
   <view class='exam foot' wx:if="{{showFoot}}">
-    <icon type='success' size='20' color='black' style='margin-top:10rpx;margin-left:5rpx;'></icon>
+    <icon type='success' size='20' color='black' style='margin-top:10rpx;margin-left:5rpx;' wx:if='{{select}}'></icon>
+    <icon type='success' size='20' color='gray' style='margin-top:10rpx;margin-left:5rpx;' wx:else></icon>
     <view>全选</view>
     <view style='width:250rpx;display:flex;flex-direction:row'>
       <view>合计:</view>

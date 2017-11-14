@@ -51,9 +51,11 @@
   margin-top:20rpx;
 }
 .item_top{
+  background: #fff;
   position: fixed;
   top:100;
-  left: 30;
+  left: 0;
+  margin-left: 30rpx;
   width:690rpx;
   height:120rpx;
   display:flex;
@@ -61,7 +63,7 @@
   justify-content: space-between;
   align-items: center;
   font-size:35rpx;
-  margin-top:100rpx;
+  margin-top:110rpx;
 }
 .item_top_font{
   width:180rpx;

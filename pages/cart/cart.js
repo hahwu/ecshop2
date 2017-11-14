@@ -11,11 +11,13 @@ Page({
     total_price:0,
     total_num:0,
     margin:120,
+    select:true,
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var select = []
     var that = this
     wx.request({
       url: 'https://www.yuncms.online/tomato/wx_cart.php',
@@ -24,76 +26,44 @@ Page({
         user_id:wx.getStorageSync('user_id'),
       },
       success:function(res){
+        var carts = res.data
+        for(var i = 0;i<carts.length;i++){
+          carts[i]['checked'] = true
+        }
         that.setData({
-          carts:res.data
+          carts:carts
         })
         that.refresh()
       }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   edit:function(res){
+    var carts = this.data.carts
+    var select = false
     if(this.data.text == '编辑'){
+      for(var i = 0;i<carts.length;i++){
+        carts[i]['checked'] = false
+      }
+      console.log(carts)
       this.setData({
         showTop: true,
         showFoot: false,
         text: '完成',
-        margin:220
+        margin:220,
+        select:false,
+        carts:carts
       })
     }else{
+      for (var i = 0; i < carts.length; i++) {
+        carts[i]['checked'] = true
+      }
       this.setData({
         showTop: false,
         showFoot: true,
         text: '编辑',
         margin:120,
+        select:true,
+        carts:carts
       })
     }
   },
@@ -145,15 +115,53 @@ Page({
     var total_price = 0
     var total_num = 0
     var cart = this.data.carts
-    console.log(cart)
     for (var i = 0; i < cart.length;i++){
-      total_price+= parseFloat(cart[i]['goods_price'])*parseInt(cart[i]['goods_number'])
-      total_num+=parseInt(cart[0]['goods_number'])
-      console.log(total_price)
+      if(cart[i]['checked']){
+        total_price += parseFloat(cart[i]['goods_price']) * parseInt(cart[i]['goods_number'])
+        total_num += parseInt(cart[0]['goods_number'])
+      }
     }
     this.setData({
       total_price:total_price,
       total_num:total_num
+    })
+  },
+  select:function(res){
+    var id = res.currentTarget.id
+    var carts = this.data.carts
+    for(var i = 0;i<carts.length;i++){
+      if(carts[i]['rec_id'] == id){
+        if (carts[i]['checked']) {
+          carts[i]['checked'] = false
+        } else {
+          carts[i]['checked'] = true
+        }
+      }
+    }
+    this.setData({
+      carts:carts
+    })
+    this.refresh()
+    this.refresh_select()
+  },
+  refresh_select:function(res){
+    var carts = this.data.carts
+    var select = true
+    for(var i = 0;i<carts.length;i++){
+      if(carts[i]['checked'] == false){
+       select = false
+      }
+    }
+    this.setData({select:select})
+  },
+  delete:function(res){
+    var that = this
+    wx.request({
+      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      data:{cart:that.data.carts},
+      success:function(res){
+        console.log(res.data)
+      }
     })
   }
 })
