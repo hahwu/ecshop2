@@ -5,6 +5,7 @@
 }
 
 .top{
+  background: #fff;
   position: fixed;
   top:0;
   right: 0;
@@ -50,6 +51,9 @@
   margin-top:20rpx;
 }
 .item_top{
+  position: fixed;
+  top:100;
+  left: 30;
   width:690rpx;
   height:120rpx;
   display:flex;
@@ -57,6 +61,7 @@
   justify-content: space-between;
   align-items: center;
   font-size:35rpx;
+  margin-top:100rpx;
 }
 .item_top_font{
   width:180rpx;
@@ -82,11 +87,11 @@
   
 }
 .num{
+  width:200rpx;
   height:40rpx;
   line-height:40rpx;
 }
 .round{
-  margin-left: 20rpx;
   height:30rpx;
   width: 30rpx;
   border: 1rpx solid #000;
