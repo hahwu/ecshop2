@@ -174,8 +174,10 @@ Page({
       data:{
         mode:'insert',
         goods_number:this.data.num,
+        goods_name:goods['goods_name'],
         goods_id:goods['goods_id'],
         user_id:wx.getStorageSync('user_id'),
+        goods_price:goods['price'],
         goods_attr:attr['text'],
         goods_attr_id:attr['id'],
       },
@@ -183,6 +185,11 @@ Page({
         console.log(res.data) 
         wx.switchTab({
           url: '../cart/cart',
+          success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onLoad();
+          }  
         })
       }
     })

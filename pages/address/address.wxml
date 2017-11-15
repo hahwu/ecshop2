@@ -1,6 +1,21 @@
 <!--pages/address/address.wxml-->
 <view class='container'>
-  <view class='info'>暂无地址</view>
+  <view class='info' wx:if="{{!address}}">暂无地址</view>
+  <view class="body flex_column">
+    <block wx:for="{{address}}">
+      <view class='item flex_row'>
+        <view style='width:60rpx;height: 100rpx;'></view>
+        <view style='width:600rpx;' bindtap='address'>
+          <view class='font flex_row' style='font-size:35rpx;'>
+            {{item.userName}}\r\n\r\n\r\n\r\n{{blank}}{{item.telNumber}}
+          </view>
+          <view class='font' style='font-size:30rpx;'>{{item.address_name}}记得舒淇在一个电影里就说过这样一段话
+          </view>
+        </view>
+        <view style='width:90rpx;font-size:30rpx;text-align:center;color:red' bindtap="delete">删除</view>
+      </view>
+    </block>
+  </view>
   <view class='body'></view>
   <view class='foot' bindtap='chooseAdd'>添加新地址</view>
 </view>

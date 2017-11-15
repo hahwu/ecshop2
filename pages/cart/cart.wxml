@@ -36,7 +36,7 @@
     <view>全选</view>
     <view style='width:250rpx;display:flex;flex-direction:row'>
       <view>合计:</view>
-      <view style='color:red;'>￥{{total_price}}.00</view>
+      <view style='color:red;'>￥{{total_price}}</view>
     </view>
     <view style='width:200rpx;height:80rpx;line-height:80rpx;border:1rpx solid #cccccc;background:#ffcc01;border-radius:10rpx;'>结算({{total_num}})</view>
   </view>

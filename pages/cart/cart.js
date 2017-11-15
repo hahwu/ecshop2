@@ -37,6 +37,28 @@ Page({
       }
     })
   },
+  onShow:function(options){
+    var select = []
+    var that = this
+    wx.request({
+      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      data: {
+        mode: 'list',
+        user_id: wx.getStorageSync('user_id'),
+      },
+      success: function (res) {
+        console.log(res.data)
+        var carts = res.data
+        for (var i = 0; i < carts.length; i++) {
+          carts[i]['checked'] = true
+        }
+        that.setData({
+          carts: carts
+        })
+        that.refresh()
+      }
+    })
+  },
   edit:function(res){
     var carts = this.data.carts
     var select = false
@@ -44,7 +66,6 @@ Page({
       for(var i = 0;i<carts.length;i++){
         carts[i]['checked'] = false
       }
-      console.log(carts)
       this.setData({
         showTop: true,
         showFoot: false,
@@ -122,7 +143,7 @@ Page({
       }
     }
     this.setData({
-      total_price:total_price,
+      total_price:total_price.toFixed(2),
       total_num:total_num
     })
   },
@@ -158,9 +179,15 @@ Page({
     var that = this
     wx.request({
       url: 'https://www.yuncms.online/tomato/wx_cart.php',
-      data:{cart:that.data.carts},
+      data:{
+        mode:'delete',
+        carts:that.data.carts,
+        user_id: wx.getStorageSync('user_id'),
+        },
       success:function(res){
-        console.log(res.data)
+        console.log(res)
+        that.setData({ carts: res.data})
+        that.refresh()
       }
     })
   }

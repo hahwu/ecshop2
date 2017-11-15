@@ -22,3 +22,17 @@ page{
   font-size: 35rpx;
   background:#fff;
 }
+.body{
+  background:#fff;
+  width:100%;
+}
+.item{
+  width:100%;
+  padding:20rpx 0 20rpx 0;
+  
+}
+.font{
+  width: 100%;
+  text-align: start;
+  justify-content: flex-start;
+}

@@ -1,18 +1,17 @@
 {
   "pages": [
-    "pages/cart/cart",
     "pages/index/index",
+    "pages/address/address",
+    "pages/user/user",
+    "pages/cart/cart",
+    
     "pages/mess/mess",
     "pages/order/order",
-    "pages/user/user",
-    
     "pages/list/list",
     "pages/detail/detail",
-    "pages/address/address"
-    
+    "pages/addinfo/addinfo"
   ],
   "window": {
-    
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "晓零食",
     "navigationBarTextStyle": "#fff"
@@ -20,8 +19,8 @@
   "tabBar": {
     "list": [
       {
-        "selectedIconPath":"img/index_s.jpg",
-        "iconPath":"img/index.jpg",
+        "selectedIconPath": "img/index_s.jpg",
+        "iconPath": "img/index.jpg",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
