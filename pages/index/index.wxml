@@ -73,21 +73,21 @@
   <view class='bt_item1'>
     <image style='width:200rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image>
     <view class='item_bo'>
-      <view>小情歌伴手礼40g</view>
-      <view style='color:red'>￥200.00</view>
+      <view>{{cart.goods_name}}</view>
+      <view style='color:red'>￥{{cart.price}}</view>
     </view>
   </view>
   <view class='band'></view>
   <view class='bt_item1' style='flex-direction:column'>
     <view>口味：</view>
     <view style='display:inline-flex;'>
-    <view wx:for="{{cart.attr}}">
-      <view id='{{index}}' bindtap='clickAttr'>
-        <block wx:if="{{index == select_attr}}">
+    <view wx:for="{{attr}}">
+      <view id='{{item.id}}' data-text='{{item.text}}' bindtap='clickAttr'>
+        <block wx:if="{{item.id == select_attr}}">
           <view class='attr_item' style='background:#707070;color:white;'>{{item.text}}</view>
         </block>
         <block wx:else>
-          <view class='attr_item' style='background:#fff'>{{item.text}}</view>
+          <view class='attr_item' id='{{item.id}}' data-text='{{item.text}}' style='background:#fff'>{{item.text}}</view>
         </block>
       </view>
     </view>

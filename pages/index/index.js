@@ -89,11 +89,15 @@ Page({
         animationData: animation.export()
       })
     }.bind(this), 200)
+    var goods = this.data.goods[res.currentTarget.id]
+    var attr_id = goods['attr'][0]['id']
+    var attr = goods['attr']
     this.setData({
-      cart: this.data.goods[res.currentTarget.id]
+      cart: goods,
+      select_attr: attr_id,
+      attr:attr
     })
     wx.setStorageSync('cart_good', this.data.goods[res.currentTarget.id])
-    wx.setStorageSync('attr', this.data.goods[res.currentTarget.id]['attr'][0])
   },
   hideModal: function () {
     // 隐藏遮罩层
@@ -118,11 +122,14 @@ Page({
     }.bind(this), 200)
   },
   clickAttr:function(res){
-    var that = this
-    wx.setStorageSync('attr_id', res.currentTarget.id)
-    that.setData({
-      select_attr:res.currentTarget.id
-    })
+    console.log(res)
+    var attr = []
+    attr['id'] = res.currentTarget.id
+    attr['text'] = res.currentTarget.dataset.text
+    console.log(attr)
+    wx.setStorageSync('attr_id', attr['id'])
+    wx.setStorageSync('attr_text', attr['text'])
+    this.setData({select_attr:attr['id'],s_attr:attr})
   },
   subtraction:function(res){
     if (this.data.num > 1){
@@ -166,23 +173,24 @@ Page({
     })
   },
   add_cart:function(res){
-    this.hideModal()
-    var goods = wx.getStorageSync('cart_good')
+    var that = this
+    var goods = this.data.cart
     var attr = wx.getStorageSync('attr')
+    var num = this.data.num
     wx.request({
       url: 'https://www.yuncms.online/tomato/wx_cart.php',
       data:{
         mode:'insert',
-        goods_number:this.data.num,
+        goods_number:num,
         goods_name:goods['goods_name'],
         goods_id:goods['goods_id'],
         user_id:wx.getStorageSync('user_id'),
         goods_price:goods['price'],
-        goods_attr:attr['text'],
-        goods_attr_id:attr['id'],
+        goods_attr:wx.getStorageSync('attr_text'),
+        goods_attr_id:wx.getStorageSync('attr_id'),
       },
       success:function(res){ 
-        console.log(res.data) 
+        that.hideModal()
         wx.switchTab({
           url: '../cart/cart',
           success: function (e) {
