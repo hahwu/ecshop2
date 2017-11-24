@@ -27,8 +27,8 @@
   <!--详情页end--> 
   <!--底部固定begin-->
   <view class='foot'>
-    <view class='foot_item' style='background:#f15a0c;color:white'>立即购买</view>
-    <view class='foot_item' bindtap='showModal'>加入购物车</view>
+    <view class='foot_item' style='background:#f15a0c;color:white' bindtap='showModal' data-id='buy'>立即购买</view>
+    <view class='foot_item' bindtap='showModal' data-id='cart'>加入购物车</view>
   </view>
   <!--底部固定end-->
 </view>
@@ -68,5 +68,5 @@
       <view class='round' bindtap='add'>十</view>
     </view>
   </view>
-  <view class='button' bindtap='add_cart'>加入购物车</view>
+  <view class='button' bindtap='{{bindtap}}'>{{word}}</view>
 </view>

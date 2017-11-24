@@ -1,15 +1,16 @@
 {
   "pages": [
+    "pages/buy/buy",
     "pages/index/index",
     "pages/address/address",
     "pages/user/user",
     "pages/cart/cart",
-    
     "pages/mess/mess",
     "pages/order/order",
     "pages/list/list",
     "pages/detail/detail",
     "pages/addinfo/addinfo"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",

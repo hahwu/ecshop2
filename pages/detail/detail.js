@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    num:1
+    num:1,
+    word:'',
+    bindtap:'',
   },
 
   /**
@@ -77,6 +79,17 @@ Page({
   },
   showModal: function (res) {
     // 显示遮罩层
+    if(res.currentTarget.dataset.id == 'cart'){
+      this.setData({
+        word:'购物车',
+        bindtap:'add_cart',
+      })
+    }else{
+      this.setData({
+        word:'下一步',
+        bindtap:'next',
+      })
+    }
     var animation = wx.createAnimation({
       duration: 200,
       timingFunction: "linear",
@@ -180,4 +193,24 @@ Page({
       }
     })
   },
+  next:function(res){
+    var goods = this.data.cart
+    var attr = wx.getStorageSync('attr')
+    var num = this.data.num
+    var user_id = wx.getStorageSync('user_id')
+    var goods_attr = wx.getStorageSync('attr_text')
+    var goods_attr_id = wx.getStorageSync('attr_id')
+    wx.navigateTo({
+      url: '../buy/buy?goods_number=' + this.data.num + '&goods_id=' + goods['goods_id'] + '&user_id=' + user_id + '&goods_attr=' + goods_attr+'&goods_attr_id='+goods_attr_id,
+      data:{
+        mode: 'insert',
+        goods_number: this.data.num,
+        goods_name: goods['goods_name'],
+        goods_id: goods['goods_id'],
+        user_id: wx.getStorageSync('user_id'),
+        goods_price: goods['shop_price'],
+        
+      },
+    })
+  }
 })

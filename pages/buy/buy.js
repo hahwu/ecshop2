@@ -1,11 +1,11 @@
-// pages/address/address.js
+// pages/buy/buy.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    blank:"   "
+  
   },
 
   /**
@@ -15,15 +15,16 @@ Page({
     var that = this
     wx.request({
       url: 'https://www.yuncms.online/tomato/wx_user.php',
-      data:{
-        mode:'address_list',
-        user_id:wx.getStorageSync('user_id')
-        },
-      success:function(res){
+      data: {
+        mode: 'address_list',
+        user_id: wx.getStorageSync('user_id')
+      },
+      success: function (res) {
         console.log(res.data)
-        that.setData({address:res.data})
+        that.setData({ address: res.data[0] })
       }
     })
+    console.log(options)
   },
 
   /**
@@ -73,29 +74,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  chooseAdd:function(res){
-    var that = this
-    wx.chooseAddress({
-      success: function(res) {
-        console.log(res) 
-        wx.request({
-          url: 'https://www.yuncms.online/tomato/wx_user.php',
-          data:{
-            mode:'addAddress',
-            address:res,
-            user_id:wx.getStorageSync('user_id')
-          },
-          success:function(res){
-            console.log(res.data)
-          }
-        })
-      },
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-  },
-  delete:function(res){
-    
   }
 })
