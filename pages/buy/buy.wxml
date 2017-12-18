@@ -16,7 +16,7 @@
       </view>
     </view>
     <view class='addr_bottom flex_row' style='justify-content:flex-end;'>
-      <view style='width:180rpx;height:50rpx;line-height:50rpx;font-size:30rpx;margin-bottom:25rpx;margin-top:15rpx;'>选择新地址</view>
+      <view style='width:180rpx;height:50rpx;line-height:50rpx;font-size:30rpx;margin-bottom:25rpx;margin-top:15rpx;' bindtap='chooseAdd'>选择新地址</view>
     </view>
     <view></view>
   </view>

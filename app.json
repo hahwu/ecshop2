@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/buy/buy",
-    "pages/index/index",
+    "pages/index/index",              
+     "pages/buy/buy",                 
     "pages/address/address",
     "pages/user/user",
     "pages/cart/cart",
@@ -10,7 +10,6 @@
     "pages/list/list",
     "pages/detail/detail",
     "pages/addinfo/addinfo"
-    
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",
