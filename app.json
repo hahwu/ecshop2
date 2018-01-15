@@ -19,20 +19,20 @@
   "tabBar": {
     "list": [
       {
-        "selectedIconPath": "img/index_s.jpg",
-        "iconPath": "img/index.jpg",
+        "selectedIconPath": "img/index_s.png",
+        "iconPath": "img/index.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
-        "selectedIconPath": "img/cart_s.jpg",
-        "iconPath": "img/cart.jpg",
+        "selectedIconPath": "img/cart_s.png",
+        "iconPath": "img/cart.png",
         "pagePath": "pages/cart/cart",
         "text": "购物车"
       },
       {
-        "selectedIconPath": "img/pers_s.jpg",
-        "iconPath": "img/pers.jpg",
+        "selectedIconPath": "img/pers_s.png",
+        "iconPath": "img/pers.png",
         "pagePath": "pages/user/user",
         "text": "我的"
       }

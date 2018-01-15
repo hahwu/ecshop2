@@ -4,15 +4,15 @@
   <!--头部end-->
   <!--商品信息begin-->
   <swiper class="swiper"  autoplay="true" interval="5000" duration="1000">    
-      <block wx:for="{{goods['img_bane']}}">    
+      <block wx:for="{{goods['img_url']}}">    
         <swiper-item>
-          <image mode="widthFix" src="https://www.yuncms.online/tomato/{{item}}" class="slide-image" mode="widthFix"/>   
+          <image mode="widthFix" src="https://www.duonimytus.cn/{{item.img_url}}" class="slide-image" mode="widthFix"/>   
         </swiper-item>    
       </block>    
   </swiper>
   <view class='detail'>
-    <view class='detail_font1'>{{goods.goods_name}}</view>
-    <view class='detail_font1' style='color:red;border-bottom:1px solid #eeeeee'>￥{{goods.shop_price}}</view>
+    <view class='detail_font1'>{{goods.name}}</view>
+    <view class='detail_font1' style='color:red;border-bottom:1px solid #eeeeee'>￥{{goods.price}}</view>
     <view class='detail_font2'><view style='color:#707070'>库存：</view><view>99</view></view>
     <view class='detail_font2'><view style='color:#707070'>运费：</view><view>包邮</view></view>
   </view>
@@ -21,7 +21,7 @@
   <!--详情页begin-->
   <view class='img'>
     <block wx:for="{{goods['img']}}">
-      <image style='width:690rpx;' mode="widthFix" src='https://www.yuncms.online/tomato/{{item}}'></image>
+      <image style='width:690rpx;' mode="widthFix" src='https://www.duonimytus.cn/{{item.img_url}}'></image>
     </block>
   </view>
   <!--详情页end--> 

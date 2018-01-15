@@ -25,13 +25,12 @@ Page({
     this.hideModal()
     var that = this
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx.php',
+      url: 'https://www.duonimytus.cn/wx_index.php',
       data:{cat:'all'},
       success:function(res){
         console.log(res.data)
         that.setData({
           goods:res.data,
-          img1:res.data[1].img_url,
         })
       }
     })

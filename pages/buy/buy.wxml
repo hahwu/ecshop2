@@ -11,7 +11,7 @@
         <view class='font flex_row' style='font-size:35rpx;'>
           {{address.userName}}\r\n\r\n\r\n\r\n{{address.telNumber}}
         </view>
-        <view class='font' style='font-size:30rpx;'>{{address.address_name}}记得舒淇在一个电影里就说过这样一段话
+        <view class='font' style='font-size:30rpx;'>{{address.address_name}}
         </view>
       </view>
     </view>

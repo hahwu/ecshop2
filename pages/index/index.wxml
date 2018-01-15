@@ -4,7 +4,16 @@
   <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
     <block>
       <swiper-item>
-        <image src="http://47.92.66.126/tomato/{{img1}}" class="slide-image" mode="widthFix" />
+        <image src="../../img/swiper_1.jpg" class="slide-image" mode="widthFix" />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../img/swiper_2.jpg" class="slide-image" mode="widthFix" />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../img/swiper_3.jpg" class="slide-image" mode="widthFix" />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../img/swiper_4.jpg" class="slide-image" mode="widthFix" />
       </swiper-item>
     </block>
   </swiper>
@@ -50,20 +59,22 @@
   <view class="body flex_column">
     <view class='body_gd flex_colum'>
       <view style='font-size:40rpx;font-weight:bold;'>爱上·零食</view>
-      <image style="width:500rpx;margin-top:15rpx;" mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image>
+      <!-- <image style="width:500rpx;margin-top:15rpx;" mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image> -->
     </view>
-  <block wx:for="{{goods}}">
+  
     <view class='item_list flex_row'>
+    <block wx:for="{{goods}}">
       <view class="item">
-        <image class="userinfo-avatar" bindtap='itemto' id='{{item.goods_id}}' mode='widthFix' src="https://yuncms.online/tomato/{{item.img_url}}" />
-        <view class='item_font'>{{item.goods_name}}</view>
+        <image class="userinfo-avatar" bindtap='itemto' id='{{item.id}}' mode='widthFix' src="https://www.duonimytus.cn/{{item.img_url}}" />
+        <view class='item_font'>{{item.name}}</view>
         <view class='item_2'>
           <view class='item_font2'>￥{{item.price}}</view>
           <image style='width:50rpx;' mode='widthFix' src='../../img/add.jpg' bindtap='showModal' id='{{item.goods_id}}'></image>
         </view>
       </view>
+      </block>
     </view>
-  </block>
+  
 
   </view>
   <!--主体end-->

@@ -18,8 +18,8 @@ Page({
     var goods_id = options.goods_id
     var that = this
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx_detail.php',
-      data:{goods_id:goods_id},
+      url: 'https://www.duonimytus.cn/wx_detail.php',
+      data:{id:goods_id},
       success:function(res){
         console.log(res.data)
         that.setData({

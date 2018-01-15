@@ -20,7 +20,7 @@ Page({
     var select = []
     var that = this
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      url: 'https://www.duonimytus.cn/wx_cart.php',
       data:{
         mode:'list',
         user_id:wx.getStorageSync('user_id'),
