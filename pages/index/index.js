@@ -89,12 +89,10 @@ Page({
       })
     }.bind(this), 200)
     var goods = this.data.goods[res.currentTarget.id]
-    var attr_id = goods['attr'][0]['id']
-    var attr = goods['attr']
+    console.log(this.data.goods)
+    console.log(res.currentTarget)
     this.setData({
       cart: goods,
-      select_attr: attr_id,
-      attr:attr
     })
     wx.setStorageSync('cart_good', this.data.goods[res.currentTarget.id])
   },
@@ -109,7 +107,6 @@ Page({
     animation.translateY(300).step()
     this.setData({
       animationData: animation.export(),
-      select_attr:0,
       num:1
     })
     setTimeout(function () {

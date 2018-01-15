@@ -69,7 +69,7 @@
         <view class='item_font'>{{item.name}}</view>
         <view class='item_2'>
           <view class='item_font2'>￥{{item.price}}</view>
-          <image style='width:50rpx;' mode='widthFix' src='../../img/add.jpg' bindtap='showModal' id='{{item.goods_id}}'></image>
+          <image style='width:50rpx;' mode='widthFix' src='../../img/add.jpg' bindtap='showModal' id='{{item.id}}'></image>
         </view>
       </view>
       </block>
@@ -82,14 +82,14 @@
 <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
   <view class='bt_item1'>
-    <image style='width:200rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{img1}}'></image>
+    <image style='width:200rpx;' mode='widthFix' src='http://www.duonimytus.cn/{{cart.img_url}}'></image>
     <view class='item_bo'>
       <view>{{cart.goods_name}}</view>
       <view style='color:red'>￥{{cart.price}}</view>
     </view>
   </view>
-  <view class='band'></view>
-  <view class='bt_item1' style='flex-direction:column'>
+  <!-- <view class='band'></view> -->
+  <!-- <view class='bt_item1' style='flex-direction:column'>
     <view>口味：</view>
     <view style='display:inline-flex;'>
     <view wx:for="{{attr}}">
@@ -103,7 +103,7 @@
       </view>
     </view>
     </view>
-  </view>
+  </view> -->
   <view class='band'></view>
   <view class='bt_item1' style='justify-content:space-between;'>
     <view class='num'>数量：</view>
