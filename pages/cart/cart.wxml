@@ -16,7 +16,7 @@
       <view class='exam item' id='{{item.rec_id}}'>
         <icon type='success' size='20' color='black' style='margin-top:10rpx;' wx:if="{{item.checked}}" bindtap='select' id='{{item.rec_id}}'></icon>
         <icon type='success' size='20' color='gray' style='margin-top:10rpx;' wx:else bindtap='select' id='{{item.rec_id}}'></icon>
-        <image src='https://www.yuncms.online/tomato/{{item.img_url}}' style='width:200rpx;margin-left:20rpx;' mode='widthFix' ></image>
+        <image src='https://www.duonimytus.cn/{{item.img_url}}' style='width:200rpx;margin-left:20rpx;' mode='widthFix' ></image>
         <view class='item_font'>
           <view style='font-weight: bold;'>{{item.goods_name}}</view>
           <view style='color:#d2d2d2'>{{item.goods_attr}}</view>

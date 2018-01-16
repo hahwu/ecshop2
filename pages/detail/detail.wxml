@@ -36,13 +36,13 @@
 <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
   <view class='bt_item1'>
-    <image style='width:200rpx;' mode='widthFix' src='http://47.92.66.126/tomato/{{cart.img_bane[0]}}'></image>
+    <image style='width:200rpx;' mode='widthFix' src='https://www.duonimytus.cn/{{cart.img_url[0].img_url}}'></image>
     <view class='item_bo'>
-      <view>{{cart.goods_name}}</view>
-      <view style='color:red'>￥{{cart.shop_price}}</view>
+      <view>{{cart.name}}</view>
+      <view style='color:red'>￥{{cart.price}}</view>
     </view>
   </view>
-  <view class='band'></view>
+  <!-- <view class='band'></view>
   <view class='bt_item1' style='flex-direction:column'>
     <view>口味：</view>
     <view style='display:inline-flex;'>
@@ -57,7 +57,7 @@
       </view>
     </view>
     </view>
-  </view>
+  </view> -->
   <view class='band'></view>
   <view class='bt_item1' style='justify-content:space-between;'>
     <view class='num'>数量：</view>

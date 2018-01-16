@@ -82,9 +82,9 @@
 <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
   <view class='bt_item1'>
-    <image style='width:200rpx;' mode='widthFix' src='http://www.duonimytus.cn/{{cart.img_url}}'></image>
+    <image style='width:200rpx;' mode='widthFix' src='https://www.duonimytus.cn/{{cart.img_url}}'></image>
     <view class='item_bo'>
-      <view>{{cart.goods_name}}</view>
+      <view>{{cart.name}}</view>
       <view style='color:red'>￥{{cart.price}}</view>
     </view>
   </view>

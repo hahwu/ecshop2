@@ -28,7 +28,6 @@ Page({
       url: 'https://www.duonimytus.cn/wx_index.php',
       data:{cat:'all'},
       success:function(res){
-        console.log(res.data)
         that.setData({
           goods:res.data,
         })
@@ -174,16 +173,14 @@ Page({
     var attr = wx.getStorageSync('attr')
     var num = this.data.num
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      url: 'https://www.duonimytus.cn/wx_cart.php',
       data:{
         mode:'insert',
         goods_number:num,
-        goods_name:goods['goods_name'],
-        goods_id:goods['goods_id'],
+        goods_name:goods['name'],
+        goods_id:goods['id'],
         user_id:wx.getStorageSync('user_id'),
         goods_price:goods['price'],
-        goods_attr:wx.getStorageSync('attr_text'),
-        goods_attr_id:wx.getStorageSync('attr_id'),
       },
       success:function(res){ 
         that.hideModal()

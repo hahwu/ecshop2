@@ -26,6 +26,7 @@ Page({
         user_id:wx.getStorageSync('user_id'),
       },
       success:function(res){
+        console.log(res.data)
         var carts = res.data
         for(var i = 0;i<carts.length;i++){
           carts[i]['checked'] = true
@@ -41,7 +42,7 @@ Page({
     var select = []
     var that = this
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      url: 'https://www.duonimytus.cn/wx_cart.php',
       data: {
         mode: 'list',
         user_id: wx.getStorageSync('user_id'),
@@ -94,7 +95,7 @@ Page({
     if(goods_num < 1) return false
     var that = this
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      url: 'https://www.duonimytus.cn/wx_cart.php',
       data:{
         mode:'subtraction',
         rec_id:res.currentTarget.id,
@@ -116,7 +117,7 @@ Page({
     if (goods_num >99) return false
     var that = this
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      url: 'https://www.duonimytus.cn/wx_cart.php',
       data: {
         mode: 'add',
         rec_id: res.currentTarget.id,
@@ -139,7 +140,7 @@ Page({
     for (var i = 0; i < cart.length;i++){
       if(cart[i]['checked']){
         total_price += parseFloat(cart[i]['goods_price']) * parseInt(cart[i]['goods_number'])
-        total_num += parseInt(cart[0]['goods_number'])
+        total_num += parseInt(cart[i]['goods_number'])
       }
     }
     this.setData({
@@ -178,16 +179,16 @@ Page({
   delete:function(res){
     var that = this
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      url: 'https://www.duonimytus.cn/wx_cart.php',
       data:{
         mode:'delete',
         carts:that.data.carts,
         user_id: wx.getStorageSync('user_id'),
         },
       success:function(res){
-        console.log(res)
+        console.log(res.data)
         that.setData({ carts: res.data})
-        that.refresh()
+        //that.refresh()
       }
     })
   }

@@ -8,7 +8,7 @@
     <view>>></view> 
   </view>
   <view class='body flex_column'>
-    <view class='body_item flex_row' id='address' bindtap='webto'>
+    <!-- <view class='body_item flex_row' id='address' bindtap='webto'>
       <view class='body_item_info flex_row' style='justify-content:space-between'>
         <view class='flex_row'>
           <image src='../../img/user_1.jpg' mode='widthFix' style='width:80rpx;'></image>
@@ -16,7 +16,7 @@
         </view>
         <view style='margin-right:30rpx;'>></view>
       </view>
-    </view>
+    </view> -->
    <view class='body_item flex_row' id='order' bindtap='webto'>
       <view class='body_item_info flex_row' style='justify-content:space-between'>
         <view class='flex_row'>

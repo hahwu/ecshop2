@@ -28,55 +28,6 @@ Page({
       }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   showModal: function (res) {
     // 显示遮罩层
     if(res.currentTarget.dataset.id == 'cart'){
@@ -108,12 +59,8 @@ Page({
       })
     }.bind(this), 200)
     var goods = this.data.goods
-    var attr_id = goods['attr'][0]['id']
-    var attr = goods['attr']
     this.setData({
       cart: goods,
-      select_attr: attr_id,
-      attr: attr
     })
     wx.setStorageSync('cart_good', this.data.goods[res.currentTarget.id])
   },
@@ -171,12 +118,12 @@ Page({
     var attr = wx.getStorageSync('attr')
     var num = this.data.num
     wx.request({
-      url: 'https://www.yuncms.online/tomato/wx_cart.php',
+      url: 'https://www.duonimytus.cn/wx_cart.php',
       data: {
         mode: 'insert',
         goods_number: num,
-        goods_name: goods['goods_name'],
-        goods_id: goods['goods_id'],
+        goods_name: goods['name'],
+        goods_id: goods['id'],
         user_id: wx.getStorageSync('user_id'),
         goods_price: goods['shop_price'],
         goods_attr: wx.getStorageSync('attr_text'),
