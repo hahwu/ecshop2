@@ -13,15 +13,17 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    this.setData({goods:wx.getStorageSync('buy')})
     wx.request({
-      url: 'https://www.duonimytus.cn/wx_user.php',
+      url: 'https://www.duonimytus.cn/wx_order.php',
       data: {
-        mode: 'address_list',
-        user_id: wx.getStorageSync('user_id')
-      },
+        mode: 'make_order',
+        user_id: wx.getStorageSync('user_id'),
+        goods:that.data.goods,
+        },
       success: function (res) {
         console.log(res.data)
-        that.setData({ address: res.data[0] })
+        that.setData({orderNo:res.data.orderNo})
       }
     })
     console.log(options)

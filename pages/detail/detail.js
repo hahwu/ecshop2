@@ -141,23 +141,12 @@ Page({
     })
   },
   next:function(res){
-    var goods = this.data.cart
-    var attr = wx.getStorageSync('attr')
-    var num = this.data.num
-    var user_id = wx.getStorageSync('user_id')
-    var goods_attr = wx.getStorageSync('attr_text')
-    var goods_attr_id = wx.getStorageSync('attr_id')
+    var goods = []
+    goods[0] = this.data.goods
+    goods[0]['num'] = this.data.num
+    wx.setStorageSync('buy', goods)
     wx.navigateTo({
-      url: '../buy/buy?goods_number=' + this.data.num + '&goods_id=' + goods['goods_id'] + '&user_id=' + user_id + '&goods_attr=' + goods_attr+'&goods_attr_id='+goods_attr_id,
-      data:{
-        mode: 'insert',
-        goods_number: this.data.num,
-        goods_name: goods['goods_name'],
-        goods_id: goods['goods_id'],
-        user_id: wx.getStorageSync('user_id'),
-        goods_price: goods['shop_price'],
-        
-      },
+      url: '../buy/buy',
     })
   }
 })

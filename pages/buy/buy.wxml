@@ -2,16 +2,15 @@
 <!-- 订单状态 -->
   <view class='top flex_column'>
     <view class='order_status block'>订单状态：待付款</view>
-    <view class='order_info block'>订单号：5a164344070db148256006</view>
+    <view class='order_info block'>订单号：{{orderNo}}</view>
   </view>
   <!-- 订单地址 -->
   <view class='addr flex_column'>
     <view class='item flex_row'>
       <view style='width:690rpx;' bindtap='address'>
         <view class='font flex_row' style='font-size:35rpx;'>
-          {{address.userName}}\r\n\r\n\r\n\r\n{{address.telNumber}}
         </view>
-        <view class='font' style='font-size:30rpx;'>{{address.address_name}}
+        <view class='font' style='font-size:30rpx;'>{
         </view>
       </view>
     </view>
@@ -22,18 +21,34 @@
   </view>
   <!-- 订单详情 -->
   <view class='info flex_column'>
+  <block wx:for="{{goods}}">
     <view class='info_goods flex_row'>
-      <image src='../../img/item.jpg' style='width:200rpx;' mode='widthFix'></image>
+      <image src='https://www.duonimytus.cn/{{item.img_url[0].img_url}}' style='width:200rpx;' mode='widthFix'></image>
       <view class='info_goods_title flex_column' style='align-items:flex-start;margin-left:20rpx;'>
-        <view style='font-size:35rpx;'>押韵六合一舒蕾伴手礼360g</view>
-        <view style='font-size:30rpx;'>金沙数360g</view>
+        <view style='font-size:35rpx;'>{{item['name']}}</view>
+        <!-- <view style='font-size:30rpx;'>金沙数360g</view> -->
       </view>
       <view class='info_goods_price'>
-        <view style='font-size:35rpx;'>￥59.80</view>
-        <view style='font-size:30rpx;'>x1</view>
+        <view style='font-size:35rpx;'>￥{{item['price']}}</view>
+        <view style='font-size:30rpx;'>x{{item['num']}}</view>
       </view>
     </view>
-    <view class='info_price'></view>
-    <view class='info_detail'></view>
+    </block>
+    <view class='info_item flex_row'>
+      <view>商品总额</view>
+      <view>￥69</view>
+    </view>
+    <view class='info_item flex_row'>
+      <view>物流费用</view>
+      <view>￥0.00</view>
+    </view>
+    <view class='info_item flex_row'>
+      <view>店铺优惠</view>
+      <view>5元（满49.00减5.00）</view>
+    </view>
+    <view class='info_item flex_row'>
+      <view>店铺折扣</view>
+      <view>￥5.00</view>
+    </view>
   </view>
 </view>
